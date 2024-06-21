@@ -10,7 +10,7 @@ export default function TodoInput(props) {
                 setTodoValue(e.target.value)
             }} placeholder="Enter todo..." />
             <button onClick={()=>{
-                if(todoValue){
+                if(todoValue.match(/(?!\s+$).+/)){
                     handleAddTodos(todoValue)
                     setTodoValue('')
                 }else{
